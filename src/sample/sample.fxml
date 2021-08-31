@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="sample.controller.MainController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <TabPane prefHeight="476.0" prefWidth="556.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Dividir times">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="345.0" prefWidth="559.0">
+                     <children>
+                        <TableView fx:id="tblDividirTimesGrupos" layoutX="14.0" layoutY="44.0" prefHeight="329.0" prefWidth="510.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnDividirTimes" layoutX="473.0" layoutY="14.0" mnemonicParsing="false" onAction="#dividirTimes" text="Dividir" />
+                        <Label fx:id="lblDividirTimes" layoutX="14.0" layoutY="18.0" text="Dividir times em grupos" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Gerar rodadas">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnGerarRodadas" layoutX="499.0" layoutY="14.0" mnemonicParsing="false" onAction="#gerarRodadas" text="Gerar" />
+                        <Label layoutX="14.0" layoutY="18.0" text="Gerar rodadas dos jogos" />
+                        <TableView fx:id="tblGerarRodadasJogos" layoutX="14.0" layoutY="49.0" prefHeight="313.0" prefWidth="530.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Exibir grupos">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="15.0" layoutY="14.0" text="Grupos formados" />
+                        <TableView fx:id="tblGruposFormados" layoutX="14.0" layoutY="39.0" prefHeight="336.0" prefWidth="529.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Buscar jogos">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnBuscarJogos" layoutX="488.0" layoutY="38.0" mnemonicParsing="false" onAction="#buscarJogos" text="Buscar" />
+                        <Label layoutX="14.0" layoutY="14.0" text="Selecione a data que você deseja ver as rodadas." />
+                        <DatePicker fx:id="dpDataRodada" layoutX="14.0" layoutY="38.0" prefHeight="25.0" prefWidth="461.0" />
+                        <TableView fx:id="tblJogosNaRodada" layoutX="14.0" layoutY="76.0" prefHeight="306.0" prefWidth="525.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</GridPane>
