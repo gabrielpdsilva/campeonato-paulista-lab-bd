@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="sample.controller.MainController">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.MainController">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -60,10 +59,28 @@
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Label layoutX="15.0" layoutY="14.0" text="Grupos formados" />
-                        <TableView fx:id="tblGruposFormados" layoutX="14.0" layoutY="39.0" prefHeight="336.0" prefWidth="529.0">
+                        <TableView fx:id="tblGrupoA" layoutX="62.0" layoutY="38.0" prefHeight="180.0" prefWidth="200.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="C1" />
-                            <TableColumn prefWidth="75.0" text="C2" />
+                            <TableColumn fx:id="colIdA" prefWidth="75.0" text="ID do time" />
+                            <TableColumn fx:id="colGrupoA" prefWidth="124.0" text="Grupo A" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="tblGrupoB" layoutX="278.0" layoutY="38.0" prefHeight="179.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="colIdB" prefWidth="75.0" text="ID do time" />
+                            <TableColumn fx:id="colGrupoB" prefWidth="124.0" text="Grupo B" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="tblGrupoC" layoutX="62.0" layoutY="246.0" prefHeight="173.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="colIdC" prefWidth="75.0" text="ID do time" />
+                            <TableColumn fx:id="colGrupoC" prefWidth="124.0" text="Grupo C" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="tblGrupoD" layoutX="278.0" layoutY="245.0" prefHeight="174.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="colIdD" prefWidth="75.0" text="ID do time" />
+                            <TableColumn fx:id="colGrupoD" prefWidth="124.0" text="Grupo D" />
                           </columns>
                         </TableView>
                      </children>

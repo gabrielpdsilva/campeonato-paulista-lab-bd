@@ -1,5 +1,7 @@
 package sample.model;
 
+import java.util.ArrayList;
+
 public class Grupo {
 
     public Grupo() {
@@ -7,7 +9,7 @@ public class Grupo {
     }
 
     private String grupo;
-    private Time time;
+    private ArrayList<Time> times;
 
     public String getGrupo() {
         return grupo;
@@ -17,11 +19,11 @@ public class Grupo {
         this.grupo = grupo;
     }
 
-    public Time getTime() {
-        return time;
+    public ArrayList<Time> getTimes() {
+        return times;
     }
 
-    public void setTime(Time time) {
-        this.time = time;
+    public void setTimes(ArrayList<Time> times) {
+        this.times = times;
     }
 }
