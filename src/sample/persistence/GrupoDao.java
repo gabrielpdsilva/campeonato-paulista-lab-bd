@@ -17,6 +17,16 @@ public class GrupoDao implements IGrupoDao {
         c = gDao.getConnection();
     }
 
+    // TODO add better name and finish implementation
+    public void buscarTudo() throws SQLException {
+        StringBuffer sql = new StringBuffer();
+        sql.append("SELECT g.grupo AS letra_grupo, ");
+        sql.append("t.nome_time AS nome_time ");
+        sql.append("FROM times t, grupos g ");
+        sql.append("WHERE t.codigo_time = g.codigo_time");
+        PreparedStatement ps = c.prepareStatement(sql.toString());
+    }
+
     @Override
     public Grupo buscarGrupo(Grupo grupo) throws SQLException {
         StringBuffer sql = new StringBuffer();
