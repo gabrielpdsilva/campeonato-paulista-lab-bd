@@ -96,8 +96,11 @@
                         <DatePicker fx:id="dpDataRodada" layoutX="14.0" layoutY="38.0" prefHeight="25.0" prefWidth="461.0" />
                         <TableView fx:id="tblJogosNaRodada" layoutX="14.0" layoutY="76.0" prefHeight="306.0" prefWidth="525.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="C1" />
-                            <TableColumn prefWidth="75.0" text="C2" />
+                            <TableColumn fx:id="colTimeA" prefWidth="75.0" text="Time A" />
+                            <TableColumn fx:id="colTimeB" prefWidth="75.0" text="Time B" />
+                              <TableColumn fx:id="colGolsA" prefWidth="75.0" text="Gols A" />
+                              <TableColumn fx:id="colGolsB" prefWidth="75.0" text="Gols B" />
+                              <TableColumn fx:id="colData" prefWidth="75.0" text="Data" />
                           </columns>
                         </TableView>
                      </children>

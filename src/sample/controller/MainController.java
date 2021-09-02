@@ -7,10 +7,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sample.model.Grupo;
+import sample.model.Jogo;
 import sample.model.Time;
 import sample.persistence.GrupoDao;
+import sample.persistence.JogoDao;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class MainController {
 
@@ -75,6 +80,21 @@ public class MainController {
     private TableView<?> tblJogosNaRodada;
 
     @FXML
+    private TableColumn<Time, String> colTimeA;
+
+    @FXML
+    private TableColumn<Time, String> colTimeB;
+
+    @FXML
+    private TableColumn<Time, Integer> colGolsA;
+
+    @FXML
+    private TableColumn<Time, Integer> colGolsB;
+
+    @FXML
+    private TableColumn<Time, Date> colData;
+
+    @FXML
     public void gerarRodadas(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         // TODO implement
         String cmd = actionEvent.getSource().toString();
@@ -89,10 +109,9 @@ public class MainController {
     }
 
     @FXML
-    public void buscarJogos(ActionEvent actionEvent) {
-        // TODO implement
-        String cmd = actionEvent.getSource().toString();
-        System.out.println(cmd);
+    public void buscarJogos(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        BuscarJogosController bjc = new BuscarJogosController(dpDataRodada, tblJogosNaRodada, colTimeA, colTimeB, colGolsA, colGolsB, colData);
+        bjc.buscarJogosDaData();
     }
 
     @FXML
