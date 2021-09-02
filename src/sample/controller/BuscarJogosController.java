@@ -1,9 +1,13 @@
 package sample.controller;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import sample.model.Jogo;
 import sample.model.Time;
 import sample.persistence.JogoDao;
@@ -14,7 +18,15 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class BuscarJogosController implements IBuscarJogosController {
-    public BuscarJogosController(DatePicker dpDataRodada, TableView<?> tblJogosNaRodada, TableColumn<Time, String> colTimeA, TableColumn<Time, String> colTimeB, TableColumn<Time, Integer> colGolsA, TableColumn<Time, Integer> colGolsB, TableColumn<Time, Date> colData) {
+    public BuscarJogosController(
+            DatePicker dpDataRodada,
+            TableView<Jogo> tblJogosNaRodada,
+            TableColumn<Time, String> colTimeA,
+            TableColumn<Time, String> colTimeB,
+            TableColumn<Time, Integer> colGolsA,
+            TableColumn<Time, Integer> colGolsB,
+            TableColumn<Time, Date> colData
+    ) {
         this.dpDataRodada = dpDataRodada;
         this.tblJogosNaRodada = tblJogosNaRodada;
         this.colTimeA = colTimeA;
@@ -28,7 +40,7 @@ public class BuscarJogosController implements IBuscarJogosController {
     private DatePicker dpDataRodada;
 
     @FXML
-    private TableView<?> tblJogosNaRodada;
+    private TableView<Jogo> tblJogosNaRodada;
 
     @FXML
     private TableColumn<Time, String> colTimeA;
@@ -51,12 +63,26 @@ public class BuscarJogosController implements IBuscarJogosController {
         Date dataFormatada = java.sql.Date.valueOf(data);
         JogoDao jogoDao = new JogoDao();
         ArrayList<Jogo> jogos = jogoDao.buscarJogosDaData(dataFormatada);
-        for(Jogo j: jogos) {
-            System.out.println(j.getGolsTimeA());
-            System.out.println(j.getTimeA().getNomeTime());
-            System.out.println(j.getTimeB().getNomeTime());
-            System.out.println(j.getGolsTimeb());
-            System.out.println(j.getData());
-        }
+        // TODO names are not working yet
+        // Testing date: 20/01/2010
+        colTimeA.setCellValueFactory(
+                new PropertyValueFactory<Time, String>("timeA")
+        );
+        colTimeB.setCellValueFactory(
+                new PropertyValueFactory<Time, String>("timeB")
+        );
+        colGolsA.setCellValueFactory(
+                new PropertyValueFactory<Time, Integer>("golsTimeA")
+        );
+        colGolsB.setCellValueFactory(
+                new PropertyValueFactory<Time, Integer>("golsTimeB")
+        );
+        colData.setCellValueFactory(
+                new PropertyValueFactory<Time, Date>("data")
+        );
+        ObservableList<Jogo> jogosFormatados = FXCollections.observableArrayList(
+                jogos
+        );
+        tblJogosNaRodada.setItems(jogosFormatados);
     }
 }

@@ -11,7 +11,7 @@ public class Jogo {
     private Time timeA;
     private Time timeB;
     private int golsTimeA;
-    private int golsTimeb;
+    private int golsTimeB;
     private Date data;
 
     public Time getTimeA() {
@@ -38,12 +38,12 @@ public class Jogo {
         this.golsTimeA = golsTimeA;
     }
 
-    public int getGolsTimeb() {
-        return golsTimeb;
+    public int getGolsTimeB() {
+        return golsTimeB;
     }
 
-    public void setGolsTimeb(int golsTimeb) {
-        this.golsTimeb = golsTimeb;
+    public void setGolsTimeB(int golsTimeB) {
+        this.golsTimeB = golsTimeB;
     }
 
     public Date getData() {

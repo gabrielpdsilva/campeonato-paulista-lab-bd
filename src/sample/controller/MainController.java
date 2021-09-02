@@ -77,7 +77,7 @@ public class MainController {
     private DatePicker dpDataRodada;
 
     @FXML
-    private TableView<?> tblJogosNaRodada;
+    private TableView<Jogo> tblJogosNaRodada;
 
     @FXML
     private TableColumn<Time, String> colTimeA;
@@ -110,13 +110,34 @@ public class MainController {
 
     @FXML
     public void buscarJogos(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-        BuscarJogosController bjc = new BuscarJogosController(dpDataRodada, tblJogosNaRodada, colTimeA, colTimeB, colGolsA, colGolsB, colData);
+        BuscarJogosController bjc = new BuscarJogosController(
+                dpDataRodada,
+                tblJogosNaRodada,
+                colTimeA,
+                colTimeB,
+                colGolsA,
+                colGolsB,
+                colData
+        );
         bjc.buscarJogosDaData();
     }
 
     @FXML
     public void initialize() throws SQLException, ClassNotFoundException {
-        ExibirGruposController exibirGruposController = new ExibirGruposController(tblGrupoA, colIdA, colGrupoA, tblGrupoB, colIdB, colGrupoB, tblGrupoC, colIdC, colGrupoC, tblGrupoD, colIdD, colGrupoD);
+        ExibirGruposController exibirGruposController = new ExibirGruposController(
+                tblGrupoA,
+                colIdA,
+                colGrupoA,
+                tblGrupoB,
+                colIdB,
+                colGrupoB,
+                tblGrupoC,
+                colIdC,
+                colGrupoC,
+                tblGrupoD,
+                colIdD,
+                colGrupoD
+        );
         exibirGruposController.setarTabelaDosGrupos();
     }
 }

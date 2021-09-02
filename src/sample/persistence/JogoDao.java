@@ -42,7 +42,7 @@ public class JogoDao implements IJogoDao {
             jogo.setTimeA(timeA);
             jogo.setTimeB(timeB);
             jogo.setGolsTimeA(rs.getInt("gols_a"));
-            jogo.setGolsTimeb(rs.getInt("gols_b"));
+            jogo.setGolsTimeB(rs.getInt("gols_b"));
             jogo.setData(rs.getDate("data"));
             jogos.add(jogo);
         }
