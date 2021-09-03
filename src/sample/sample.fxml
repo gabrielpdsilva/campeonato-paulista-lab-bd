@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.MainController">
    <columnConstraints>
@@ -27,7 +28,10 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="345.0" prefWidth="559.0">
                      <children>
                         <Button fx:id="btnDividirTimes" layoutX="253.0" layoutY="224.0" mnemonicParsing="false" onAction="#dividirTimes" text="Dividir" />
-                        <Label fx:id="lblDividirTimes" layoutX="14.0" layoutY="18.0" text="Dividir times em grupos" />
+                        <Label fx:id="lblDividirTimes" layoutX="14.0" layoutY="18.0" text="Dividir times em grupos">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font></Label>
                         <Label layoutX="102.0" layoutY="191.0" prefHeight="33.0" prefWidth="353.0" text="Clique no botão para dividir os times em grupos aleatoriamente." />
                      </children>
                   </AnchorPane>
@@ -38,7 +42,10 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Button fx:id="btnGerarRodadas" layoutX="256.0" layoutY="236.0" mnemonicParsing="false" onAction="#gerarRodadas" text="Gerar" />
-                        <Label layoutX="14.0" layoutY="18.0" text="Gerar rodadas dos jogos" />
+                        <Label layoutX="14.0" layoutY="18.0" text="Gerar rodadas dos jogos">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font></Label>
                         <Label layoutX="148.0" layoutY="207.0" text="Clique no botão para gerar as rodadas dos jogos." />
                      </children>
                   </AnchorPane>
@@ -48,14 +55,17 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="15.0" layoutY="14.0" text="Grupos formados" />
-                        <TableView fx:id="tblGrupoA" layoutX="62.0" layoutY="38.0" prefHeight="180.0" prefWidth="200.0">
+                        <Label layoutX="62.0" layoutY="23.0" text="Grupos formados">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font></Label>
+                        <TableView fx:id="tblGrupoA" layoutX="62.0" layoutY="55.0" prefHeight="180.0" prefWidth="200.0">
                           <columns>
                             <TableColumn fx:id="colIdA" prefWidth="75.0" text="ID do time" />
                             <TableColumn fx:id="colGrupoA" prefWidth="124.0" text="Grupo A" />
                           </columns>
                         </TableView>
-                        <TableView fx:id="tblGrupoB" layoutX="278.0" layoutY="38.0" prefHeight="179.0" prefWidth="200.0">
+                        <TableView fx:id="tblGrupoB" layoutX="278.0" layoutY="55.0" prefHeight="179.0" prefWidth="200.0">
                           <columns>
                             <TableColumn fx:id="colIdB" prefWidth="75.0" text="ID do time" />
                             <TableColumn fx:id="colGrupoB" prefWidth="124.0" text="Grupo B" />
@@ -73,6 +83,7 @@
                             <TableColumn fx:id="colGrupoD" prefWidth="124.0" text="Grupo D" />
                           </columns>
                         </TableView>
+                        <Button fx:id="btnBuscarGruposFormados" layoutX="427.0" layoutY="19.0" mnemonicParsing="false" onAction="#buscarGruposFormados" text="Buscar" />
                      </children>
                   </AnchorPane>
                </content>
@@ -86,8 +97,8 @@
                         <DatePicker fx:id="dpDataRodada" layoutX="14.0" layoutY="38.0" prefHeight="25.0" prefWidth="461.0" />
                         <TableView fx:id="tblJogosNaRodada" layoutX="14.0" layoutY="76.0" prefHeight="306.0" prefWidth="525.0">
                           <columns>
-                            <TableColumn fx:id="colTimeA" prefWidth="131.0" text="Time A" />
-                            <TableColumn fx:id="colTimeB" prefWidth="117.0" text="Time B" />
+                            <TableColumn fx:id="colTimeA" prefWidth="120.0" text="Time A" />
+                            <TableColumn fx:id="colTimeB" prefWidth="128.0" text="Time B" />
                               <TableColumn fx:id="colGolsA" prefWidth="87.0" text="Gols A" />
                               <TableColumn fx:id="colGolsB" prefWidth="93.0" text="Gols B" />
                               <TableColumn fx:id="colData" prefWidth="96.0" text="Data" />
@@ -96,6 +107,33 @@
                      </children>
                   </AnchorPane>
                </content>
+            </Tab>
+            <Tab text="Detalhes">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="24.0" layoutY="23.0" text="Integrantes:">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="70.0" text="Gabriel Pimentel" />
+                        <Label layoutX="26.0" layoutY="53.0" text="Felipe Medeiros" />
+                        <Label layoutX="24.0" layoutY="116.0" text="Disciplina:">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="146.0" text="Laboratório de Banco de Dados" />
+                        <Label layoutX="25.0" layoutY="207.0" text="Professor:">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="232.0" text="Leandro Colevati" />
+                     </children>
+                  </AnchorPane>
+              </content>
             </Tab>
         </tabs>
       </TabPane>

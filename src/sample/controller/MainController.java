@@ -65,6 +65,9 @@ public class MainController {
     private TableColumn<Time, String> colGrupoD;
 
     @FXML
+    private Button btnBuscarGruposFormados;
+
+    @FXML
     private Button btnBuscarJogos;
 
     @FXML
@@ -87,6 +90,25 @@ public class MainController {
 
     @FXML
     private TableColumn<Jogo, Date> colData;
+
+    @FXML
+    void buscarGruposFormados(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        ExibirGruposController exibirGruposController = new ExibirGruposController(
+                tblGrupoA,
+                colIdA,
+                colGrupoA,
+                tblGrupoB,
+                colIdB,
+                colGrupoB,
+                tblGrupoC,
+                colIdC,
+                colGrupoC,
+                tblGrupoD,
+                colIdD,
+                colGrupoD
+        );
+        exibirGruposController.setarTabelaDosGrupos();
+    }
 
     @FXML
     public void gerarRodadas(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
@@ -116,20 +138,6 @@ public class MainController {
 
     @FXML
     public void initialize() throws SQLException, ClassNotFoundException {
-        ExibirGruposController exibirGruposController = new ExibirGruposController(
-                tblGrupoA,
-                colIdA,
-                colGrupoA,
-                tblGrupoB,
-                colIdB,
-                colGrupoB,
-                tblGrupoC,
-                colIdC,
-                colGrupoC,
-                tblGrupoD,
-                colIdD,
-                colGrupoD
-        );
-        exibirGruposController.setarTabelaDosGrupos();
+        
     }
 }
