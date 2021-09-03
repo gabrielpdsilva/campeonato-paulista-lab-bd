@@ -20,9 +20,6 @@ import java.util.Date;
 public class MainController {
 
     @FXML
-    private TableView<?> tblDividirTimesGrupos;
-
-    @FXML
     private Button btnDividirTimes;
 
     @FXML
@@ -30,9 +27,6 @@ public class MainController {
 
     @FXML
     private Button btnGerarRodadas;
-
-    @FXML
-    private TableView<?> tblGerarRodadasJogos;
 
     @FXML
     private TableView<Time> tblGrupoA;
