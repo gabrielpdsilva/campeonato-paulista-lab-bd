@@ -111,15 +111,32 @@ public class MainController {
     }
 
     @FXML
-    public void gerarRodadas(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-        GerarRodadasController grc = new GerarRodadasController();
-        grc.gerarRodadasAleatoriamente();
+    public void gerarRodadas(ActionEvent actionEvent) {
+        // TODO finish implementing using procedure call
+        try {
+            GerarRodadasController grc = new GerarRodadasController();
+            grc.gerarRodadasAleatoriamente();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Rodadas geradas com sucesso!");
+            alert.show();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
+            alert.show();
+        }
     }
 
     @FXML
-    public void dividirTimes(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-        DividirTimesController dtc = new DividirTimesController();
-        dtc.dividirTimesAleatoriamente();
+    public void dividirTimes(ActionEvent actionEvent) {
+        try {
+            DividirTimesController dtc = new DividirTimesController();
+            dtc.dividirTimesAleatoriamente();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Times divididos com sucesso!");
+            alert.show();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
+            alert.show();
+        }
     }
 
     @FXML
@@ -138,6 +155,6 @@ public class MainController {
 
     @FXML
     public void initialize() throws SQLException, ClassNotFoundException {
-        
+
     }
 }

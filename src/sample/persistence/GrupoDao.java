@@ -3,10 +3,7 @@ package sample.persistence;
 import sample.model.Grupo;
 import sample.model.Time;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class GrupoDao implements IGrupoDao {
@@ -41,9 +38,9 @@ public class GrupoDao implements IGrupoDao {
     }
 
     @Override
-    public String gerarGruposAleatoriamente() throws SQLException {
+    public boolean gerarGruposAleatoriamente() throws SQLException {
         // TODO implement
-        System.out.println("Grupos gerados com sucesso.");
-        return null;
+        System.out.println("Times divididos com sucesso.");
+        return true;
     }
 }
