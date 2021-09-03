@@ -39,4 +39,11 @@ public class GrupoDao implements IGrupoDao {
         grupo.setTimes(times);
         return grupo;
     }
+
+    @Override
+    public String gerarGruposAleatoriamente() throws SQLException {
+        // TODO implement
+        System.out.println("Grupos gerados com sucesso.");
+        return null;
+    }
 }

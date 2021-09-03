@@ -90,16 +90,14 @@ public class MainController {
 
     @FXML
     public void gerarRodadas(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-        // TODO implement
-        String cmd = actionEvent.getSource().toString();
-        System.out.println(cmd);
+        GerarRodadasController grc = new GerarRodadasController();
+        grc.gerarRodadasAleatoriamente();
     }
 
     @FXML
-    public void dividirTimes(ActionEvent actionEvent) {
-        // TODO implement
-        String cmd = actionEvent.getSource().toString();
-        System.out.println(cmd);
+    public void dividirTimes(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        DividirTimesController dtc = new DividirTimesController();
+        dtc.dividirTimesAleatoriamente();
     }
 
     @FXML
