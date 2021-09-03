@@ -80,19 +80,19 @@ public class MainController {
     private TableView<Jogo> tblJogosNaRodada;
 
     @FXML
-    private TableColumn<Time, String> colTimeA;
+    private TableColumn<Jogo, String> colTimeA;
 
     @FXML
-    private TableColumn<Time, String> colTimeB;
+    private TableColumn<Jogo, String> colTimeB;
 
     @FXML
-    private TableColumn<Time, Integer> colGolsA;
+    private TableColumn<Jogo, Integer> colGolsA;
 
     @FXML
-    private TableColumn<Time, Integer> colGolsB;
+    private TableColumn<Jogo, Integer> colGolsB;
 
     @FXML
-    private TableColumn<Time, Date> colData;
+    private TableColumn<Jogo, Date> colData;
 
     @FXML
     public void gerarRodadas(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
