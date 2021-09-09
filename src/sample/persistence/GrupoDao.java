@@ -38,9 +38,17 @@ public class GrupoDao implements IGrupoDao {
     }
 
     @Override
-    public boolean gerarGruposAleatoriamente() throws SQLException {
-        // TODO implement
-        System.out.println("Times divididos com sucesso.");
-        return true;
+    public boolean gerarRodadasAleatoriamente() throws SQLException {
+        // TODO finish
+        String sql = "{CALL sp_gerar_rodadas_jogos(?)}";
+        CallableStatement cs = c.prepareCall(sql);
+        cs.registerOutParameter(1, Types.BIT);
+        cs.execute();
+        boolean saida = cs.getBoolean(1);
+        cs.close();
+        if(saida) {
+            return true;
+        }
+        throw new SQLException("Ocorreu um erro ao tentar formar as rodadas dos jogos.");
     }
 }

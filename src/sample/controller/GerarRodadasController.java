@@ -9,6 +9,6 @@ public class GerarRodadasController implements IGerarRodadasController {
     @Override
     public void gerarRodadasAleatoriamente() throws SQLException, ClassNotFoundException {
         GrupoDao grupoDao = new GrupoDao();
-        grupoDao.gerarGruposAleatoriamente();
+        grupoDao.gerarRodadasAleatoriamente();
     }
 }

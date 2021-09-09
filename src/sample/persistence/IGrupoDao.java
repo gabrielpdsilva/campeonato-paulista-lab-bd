@@ -5,5 +5,5 @@ import java.sql.SQLException;
 
 public interface IGrupoDao {
     Grupo buscarGrupo(Grupo grupo) throws SQLException;
-    boolean gerarGruposAleatoriamente() throws SQLException;
+    boolean gerarRodadasAleatoriamente() throws SQLException;
 }
