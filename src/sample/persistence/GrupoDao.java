@@ -39,7 +39,6 @@ public class GrupoDao implements IGrupoDao {
 
     @Override
     public boolean gerarRodadasAleatoriamente() throws SQLException {
-        // TODO finish
         String sql = "{CALL sp_gerar_rodadas_jogos(?)}";
         CallableStatement cs = c.prepareCall(sql);
         cs.registerOutParameter(1, Types.BIT);

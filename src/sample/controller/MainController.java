@@ -112,7 +112,6 @@ public class MainController {
 
     @FXML
     public void gerarRodadas(ActionEvent actionEvent) {
-        // TODO finish implementing using procedure call
         try {
             GerarRodadasController grc = new GerarRodadasController();
             grc.gerarRodadasAleatoriamente();
